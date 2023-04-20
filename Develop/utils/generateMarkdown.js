@@ -47,7 +47,7 @@ function renderLicenseSection(license) {
     return "";
   }
 
-  let licenseSection = `## License:
+let licenseSection = `## License:
 
 This project is licensed under the ${license} license.
 
@@ -58,10 +58,50 @@ ${renderLicenseLink(license)}`;
 }
 
 // TODO: Create a function to generate markdown for README
+// Here we have used template literals to create the markdown in the generated Readme.
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  ## Description
+ ${data.Description}
+
+## Table of Contents
+
+- [Usage](#usage)
+- [Tests](#tests)
+- [Contributing](#contributing)
+- [License](#license)
+- [Questions](#questions)
+
+## Installation
+To install necessary dependencies for this project, consider the following:
+\`\`\`
+${data.installation}
+\`\`\`
+
+## Usage
+
+${data.usage}
+
+## Tests
+
+${data.tests}
+
+## Contributing
+
+${data.contributions}
+
+## License
+
+${renderLicenseSection(data.license)}
+
+## Questions
+
+If you have any questions, please reach out to me at ${data.email}. You can also check out my [GitHub profile](${data.profile}).
+
 `;
 }
+
+
 
 module.exports = generateMarkdown;

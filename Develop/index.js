@@ -2,8 +2,8 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generatorMarkdown = require("./utils/generateMarkdown.js");
-// TODO: Created an array of questions for user input
 
+// TODO: Created an array of questions for user input
 inquirer
   .prompt([ 
     {
@@ -19,12 +19,12 @@ inquirer
     {
     type: 'input',
     message: 'What is your Project title?',
-    name: 'Title',
+    name: 'title',
     },
     {
     type: 'input',
     message: 'Please write a short description of your project:',
-    name: 'Description',
+    name: 'description',
     },
     {
     type: 'checkbox',
@@ -34,13 +34,18 @@ inquirer
     },
     {
     type: 'input',
+    message: 'What are the steps required to install your project?',
+    name: 'installation',
+    },
+    {
+    type: 'input',
     message: 'Provide instructions and examples for usage:',
-    name: 'Usage',
+    name: 'usage',
     },
     {
     type: 'input',
     message: 'Explain the necessary steps to run the tests for your project:',
-    name: 'Tests',
+    name: 'tests',
     },
     {
     type: 'input',
