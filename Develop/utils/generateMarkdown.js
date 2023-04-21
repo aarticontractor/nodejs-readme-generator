@@ -51,7 +51,7 @@ function renderLicenseSection(license) {
 
 This project is licensed under the ${license} license.
 
-${renderLicenseBadge(license)};
+${renderLicenseBadge(license)}
 ${renderLicenseLink(license)}`;
 
   return licenseSection;
@@ -61,7 +61,7 @@ ${renderLicenseLink(license)}`;
 // Here we have used template literals to create the markdown in the generated Readme.
 function generateMarkdown(data) {
   return `# ${data.title}
-con
+
 ## Description
 ${data.description}
 
