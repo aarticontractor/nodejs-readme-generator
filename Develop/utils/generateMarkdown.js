@@ -47,6 +47,8 @@ function renderLicenseSection(license) {
     return "";
   }
 
+  console.log(license);
+
 let licenseSection = `## License:
 
 This project is licensed under the ${license} license.
@@ -63,7 +65,7 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
   ## Description
- ${data.Description}
+ ${data.description}
 
 ## Table of Contents
 

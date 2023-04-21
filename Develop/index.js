@@ -4,8 +4,8 @@ const inquirer = require("inquirer");
 const generatorMarkdown = require("./utils/generateMarkdown.js");
 
 // TODO: Created an array of questions for user input
-inquirer
-  .prompt([ 
+
+let questions = [ 
     {
     type: 'input',
     message: 'What is your GitHub profile link:',
@@ -27,7 +27,7 @@ inquirer
     name: 'description',
     },
     {
-    type: 'checkbox',
+    type: 'list',
     message: 'What kind of license should your project have? (Use arrow keys)',
     name: 'license',
     choices: ["MIT License", "Apache License 2.0", "GNU General Puplic License v3.0", "Mozilla Public License 2.0", "None"],
@@ -52,7 +52,7 @@ inquirer
     message: 'Explain the guidelines for contributing to this project:',
     name: 'contributions',
     },
-]),
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -73,12 +73,12 @@ async function init() {
     // Prompt the user for answers. 
     // By using await before inquirer.prompt, the program waits for the user to finish answering the prompts before continuing to the next line of code. 
     const answers = await inquirer.prompt(questions);
-
+    console.log(answers);
     // Generate the README content.
     let readmeContent = generatorMarkdown(answers);
-
+    console.log("READ ME CONTENT IS" +readmeContent);
         // Write the README file.
-        writeToFile("(Generated)README.md", readmeContent);
+        writeToFile("Generated-README.md", readmeContent);
 
 }
 
