@@ -3,18 +3,18 @@
 // Here I have used the switch case statement in the renderLicenseBadge function to render the license badge
 function renderLicenseBadge(license) {
   switch (license) {
-    case "MIT License":
-      return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
-    case "Apache License 2.0":
-      return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
-    case "GNU General Puplic License v3.0":
-      return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
-    case "Mozilla Public License 2.0":
-      return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
-    case "None":
-      return "";
-    default:
-      return "";
+      case "MIT License":
+          return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+      case "Apache License 2.0":
+          return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+      case "GNU General Puplic License v3.0":
+          return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+      case "Mozilla Public License 2.0":
+          return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+      case "None":
+          return "";
+      default:
+          return "";
   }
 
 }
@@ -24,18 +24,18 @@ function renderLicenseBadge(license) {
 // Here I have used the switch case statement in the renderLicenseLink function to render the license link.
 function renderLicenseLink(license) {
   switch (license) {
-    case "MIT License":
-      return "(https://opensource.org/licenses/MIT)";
-    case "Apache License 2.0":
-      return "(https://opensource.org/licenses/Apache-2.0)";
-    case "GNU General Puplic License v3.0":
-      return "(https://www.gnu.org/licenses/gpl-3.0)";
-    case "Mozilla Public License 2.0":
-      return "(https://opensource.org/licenses/MPL-2.0)";
-    case "None":
-      return "";
-    default:
-      return "";
+      case "MIT License":
+          return "(https://opensource.org/licenses/MIT)";
+      case "Apache License 2.0":
+          return "(https://opensource.org/licenses/Apache-2.0)";
+      case "GNU General Puplic License v3.0":
+          return "(https://www.gnu.org/licenses/gpl-3.0)";
+      case "Mozilla Public License 2.0":
+          return "(https://opensource.org/licenses/MPL-2.0)";
+      case "None":
+          return "";
+      default:
+          return "";
   }
 }
 
@@ -44,12 +44,10 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   // Create empty variable to store data from user input
   if (!license) {
-    return "";
+      return "";
   }
 
-  console.log(license);
-
-let licenseSection = `## License:
+  let licenseSection = `## License:
 
 This project is licensed under the ${license} license.
 
@@ -63,9 +61,9 @@ ${renderLicenseLink(license)}`;
 // Here we have used template literals to create the markdown in the generated Readme.
 function generateMarkdown(data) {
   return `# ${data.title}
-
-  ## Description
- ${data.description}
+con
+## Description
+${data.description}
 
 ## Table of Contents
 
@@ -103,7 +101,5 @@ If you have any questions, please reach out to me at ${data.email}. You can also
 
 `;
 }
-
-
 
 module.exports = generateMarkdown;
